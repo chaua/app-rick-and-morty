@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Rick &amp; Morty</string>
+    <string name="navigation_personagens">Personagens</string>
+    <string name="navigation_episodios">Episódios</string>
+    <string name="app_btn_compartilhar">Compartilhar</string>
+    <string name="personagens_chooser">Selecione a aplicação para compartilhar o texto</string>
+</resources>

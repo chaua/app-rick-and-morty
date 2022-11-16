@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ============================================================================ -->
+    <!-- Variáveis de amarração                                                       -->
+    <!-- ============================================================================ -->
+    <data>
+
+        <variable
+            name="personagem"
+            type="br.com.koruthos.rickmorty.models.Personagem" />
+    </data>
+
+    <!-- ============================================================================ -->
+    <!-- Layout da tela                                                               -->
+    <!-- ============================================================================ -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginEnd="@dimen/spacing_normal"
+        android:layout_marginBottom="@dimen/spacing_small"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_normal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/personagem_img_imagem"
+                android:layout_width="@dimen/image_larger"
+                android:layout_height="@dimen/image_larger"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/personagem_txt_nome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-black"
+                android:maxLines="1"
+                android:text="@{personagem.nome}"
+                android:textColor="@color/teal_500"
+                android:textSize="@dimen/font_large"
+                android:typeface="sans"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/personagem_img_imagem"
+                app:layout_constraintTop_toTopOf="@+id/personagem_img_imagem"
+                tools:text="Rick Sanchez" />
+
+            <TextView
+                android:id="@+id/personagem_txt_especie"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{personagem.especie}"
+                android:textColor="@color/grey_700"
+                android:textSize="@dimen/font_small"
+                android:typeface="sans"
+                app:layout_constraintEnd_toEndOf="@+id/personagem_txt_nome"
+                app:layout_constraintStart_toStartOf="@+id/personagem_txt_nome"
+                app:layout_constraintTop_toBottomOf="@+id/personagem_txt_nome"
+                tools:text="Humano" />
+
+            <ImageView
+                android:id="@+id/personagem_img_share"
+                style="?android:actionButtonStyle"
+                android:layout_width="@dimen/image_small"
+                android:layout_height="@dimen/image_small"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:contentDescription="@string/app_btn_compartilhar"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_share"
+                android:focusable="true"
+                android:clickable="true"
+                app:layout_constraintEnd_toEndOf="@+id/personagem_txt_especie"
+                app:layout_constraintTop_toBottomOf="@+id/personagem_txt_especie" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>
