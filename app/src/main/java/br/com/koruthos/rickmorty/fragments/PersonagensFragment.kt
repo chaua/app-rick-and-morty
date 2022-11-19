@@ -30,7 +30,7 @@ class PersonagensFragment : Fragment() {
     private var mPersonagens: MutableList<Personagem> = mutableListOf()
 
     // Controle da paginação do webservice
-    private var mPagina = 0
+    private var mPagina = 1
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -114,7 +114,9 @@ class PersonagensFragment : Fragment() {
             // Retorno de falha
             override fun onFailure(call: Call<Response<Personagem>>, t: Throwable) {
                 Log.e(TAG, "onFailure: ", t)
-                Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
+                if (context != null) {
+                    Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
+                }
             }
         })
     }

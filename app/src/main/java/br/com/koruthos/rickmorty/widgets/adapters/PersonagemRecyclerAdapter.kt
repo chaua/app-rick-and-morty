@@ -60,7 +60,7 @@ class PersonagemRecyclerAdapter(
      * Retorna o número de itens da lista.
      */
     override fun getItemCount(): Int {
-        Log.d(TAG, "getItemCount: ${personagens.size}")
+//        Log.d(TAG, "getItemCount: ${personagens.size}")
         return personagens.size
     }
 
@@ -77,7 +77,7 @@ class PersonagemRecyclerAdapter(
     }
 
     // =================================================================================
-    // EVENTOS
+    // VIEW HOLDER
     // =================================================================================
 
     /**

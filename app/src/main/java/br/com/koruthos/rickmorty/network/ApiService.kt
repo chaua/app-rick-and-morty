@@ -16,6 +16,6 @@ interface ApiService {
     @GET("character")
     fun listarPersonagens(@Query("page") pagina: Int): Call<Response<Personagem>>
 
-    @GET("character")
+    @GET("episode")
     fun listarEpisodios(@Query("page") pagina: Int): Call<Response<Episodio>>
 }

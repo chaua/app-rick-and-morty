@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ============================================================================ -->
+    <!-- Variáveis de amarração                                                       -->
+    <!-- ============================================================================ -->
+    <data>
+        <variable
+            name="episodio"
+            type="br.com.koruthos.rickmorty.models.Episodio" />
+    </data>
+
+    <!-- ============================================================================ -->
+    <!-- Layout da tela                                                               -->
+    <!-- ============================================================================ -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/episodio_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginEnd="@dimen/spacing_normal"
+        android:layout_marginBottom="@dimen/spacing_small"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_normal">
+
+            <TextView
+                android:id="@+id/episodio_txt_nome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-black"
+                android:maxLines="1"
+                android:text="@{episodio.nome}"
+                android:textColor="@color/teal_500"
+                android:textSize="@dimen/font_large"
+                android:typeface="sans"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Rick Sanchez" />
+
+            <TextView
+                android:id="@+id/episodio_txt_numero"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{episodio.numero}"
+                android:textColor="@color/grey_700"
+                android:textSize="@dimen/font_small"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/episodio_txt_nome"
+                app:layout_constraintStart_toStartOf="@+id/episodio_txt_nome"
+                app:layout_constraintTop_toBottomOf="@+id/episodio_txt_nome"
+                tools:text="Humano" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>
