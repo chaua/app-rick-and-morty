@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity() {
         // Cadastra os eventos da bottom navigation
         mBinding.mainBottomNavigation.setOnItemSelectedListener(::onItemSelected)
 
+        // Cadastra a toolbar
+        setSupportActionBar(mBinding.mainToolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
         // Inicializa os fragmentos
         mPersonagensFragment = PersonagensFragment.newInstance()
         mEpisodiosFragment = EpisodiosFragment.newInstance()

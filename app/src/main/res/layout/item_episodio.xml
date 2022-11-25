@@ -7,6 +7,7 @@
     <!-- Variáveis de amarração                                                       -->
     <!-- ============================================================================ -->
     <data>
+
         <variable
             name="episodio"
             type="br.com.koruthos.rickmorty.models.Episodio" />
@@ -19,9 +20,9 @@
         android:id="@+id/episodio_card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_normal"
+        android:layout_marginStart="@dimen/spacing_small"
         android:layout_marginTop="@dimen/spacing_small"
-        android:layout_marginEnd="@dimen/spacing_normal"
+        android:layout_marginEnd="@dimen/spacing_small"
         android:layout_marginBottom="@dimen/spacing_small"
         android:clickable="true"
         android:focusable="true"
@@ -38,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:fontFamily="sans-serif-black"
-                android:maxLines="1"
+                android:maxLines="3"
                 android:text="@{episodio.nome}"
                 android:textColor="@color/teal_500"
                 android:textSize="@dimen/font_large"

@@ -4,4 +4,6 @@
     <string name="navigation_episodios">Episódios</string>
     <string name="app_btn_compartilhar">Compartilhar</string>
     <string name="personagens_chooser">Selecione a aplicação para compartilhar o texto</string>
+    <string name="app_ok">Ok</string>
+    <string name="app_nao">Nope!</string>
 </resources>

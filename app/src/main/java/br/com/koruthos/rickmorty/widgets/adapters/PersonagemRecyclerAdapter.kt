@@ -31,7 +31,7 @@ class PersonagemRecyclerAdapter(
     /**
      * Preenche os dados do view holder com o elemento correspondente da lista de personagens.
      */
-    override fun onBindViewHolder(holder: PersonagemRecyclerAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Log.d(TAG, "onBindViewHolder: ${position}")
 
         val personagem = personagens[position]
@@ -46,6 +46,10 @@ class PersonagemRecyclerAdapter(
         holder.binding.personagemImgShare.setOnClickListener {
             // Chama o método do evento recebido no construtor passando o personagem atual
             evento.onCompartilharClick(personagem)
+        }
+
+        holder.binding.personagemCardView.setOnClickListener {
+            evento.onPersonagemClick(personagem)
         }
 
         // Carrega a imagem do personagem
@@ -74,6 +78,7 @@ class PersonagemRecyclerAdapter(
      */
     interface Evento {
         fun onCompartilharClick(personagem: Personagem)
+        fun onPersonagemClick(personagem: Personagem)
     }
 
     // =================================================================================
